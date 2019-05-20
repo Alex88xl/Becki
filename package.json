@@ -1,0 +1,25 @@
+{
+  "name": "pet-shop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "node_modules/.bin/lite-server",
+    "test": "node_modules/.bin/truffle mocha",
+    "tm": "node_modules/.bin/truffle migrate",
+    "tc": "node_modules/.bin/truffle console",
+    "tt": "node_modules/.bin/truffle test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  },
+  "dependencies": {
+    "npm": "^6.9.0",
+    "truffle": "^5.0.17"
+  }
+}
