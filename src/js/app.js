@@ -107,26 +107,17 @@ App = {
   },
 
   listenForEvents: function() {
-    /*
-    App.contracts.Election.deployed().then(function(instance) {
-      instance.votedEvent({}, {
-        fromBlock: 0,
-        toBlock: 'latest'
-      }).watch(function(error, event) {
-        console.log("event triggered", event)
-        // Reload when a new vote is recorded
-        App.render();
-      });
-    });*/
-
+    
+    //Event aus Election.sol wird hier überwacht. Wird es emmitted, so werden zwei candidaten hinzugefügt
     App.contracts.Election.deployed().then(function(instance) {
       instance.reqCandidate({}, {
         fromBlock: 0,
         toBlock: 'latest'
       }).watch(function(error, event) {
-        instance.addCandidate("Peter");
-        instance.addCandidate("Wurst");
-        console.log("event triggered", event)
+        //Hier würde ein externe API-Zugriff statt finden
+        console.log("event triggered", event);
+        instance.addCandidate("Peter", { from: App.account });
+        instance.addCandidate("Wurst", { from: App.account });
         // Reload when a new vote is recorded
         App.render();
       });
