@@ -16,17 +16,13 @@ contract Election {
     uint public candidatesCount;
 
     constructor () public {
-        emit reqCandidate();
+        addCandidate("Alex");
+        addCandidate("Moritz");
     }
-
-    event reqCandidate();
-    event updatedCand(string candAdded);
 
     function addCandidate (string memory _name) public {
         candidatesCount ++;
         candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
-
-        emit updatedCand(_name);
     }
 
     function vote (uint candidateId) public {
@@ -42,10 +38,12 @@ contract Election {
         // update candidate vote Count
         candidates[candidateId].voteCount ++;
 
-        emit votedEvent(candidateId);
+        // Event emmitten
+        emit reqCandidate(msg.sender);
     }
 
-    event votedEvent (
-        uint indexed _candidateId
+    event reqCandidate (
+        // Dieses Event wird emitted und vom Backend beobachet
+        address indexed _candidateId
     );
 }
