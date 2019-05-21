@@ -6197,7 +6197,11 @@
     }
   },
   "schemaVersion": "3.0.9",
+<<<<<<< HEAD
   "updatedAt": "2019-05-20T15:01:07.025Z",
+=======
+  "updatedAt": "2019-05-21T09:59:11.204Z",
+>>>>>>> mergebcc
   "devdoc": {
     "methods": {}
   },
