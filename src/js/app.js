@@ -119,7 +119,22 @@ App = {
         instance.addCandidate("Peter", { from: App.account });
         instance.addCandidate("Wurst", { from: App.account });
         // Reload when a new vote is recorded
-        App.render();
+        
+        var options = {
+          url: "http://localhost:3000/bcc.php",
+          dataType: "text",
+          type: "GET",
+          data: { rechnung: "alle" }, // Our valid JSON string
+          success: function( data, status, xhr ) {
+            instance.addCandidate(data, { from: App.account });
+            App.render();
+          },
+          error: function( xhr, status, error ) {
+              alert("failure");
+          }
+      };
+      $.ajax( options );
+
       });
     });
   }
