@@ -121,7 +121,7 @@ App = {
         // Reload when a new vote is recorded
         
         var options = {
-          url: "http://localhost:3000/bcc.php",
+          url: "http://localhost:49160/bcc.php",
           dataType: "text",
           type: "GET",
           data: { rechnung: "alle" }, // Our valid JSON string
