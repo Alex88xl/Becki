@@ -116,12 +116,12 @@ App = {
       }).watch(function(error, event) {
         //Hier würde ein externe API-Zugriff statt finden
         console.log("event triggered", event);
-        instance.addCandidate("Peter", { from: App.account });
-        instance.addCandidate("Wurst", { from: App.account });
+        instance.addCandidate("CandX", { from: App.account });
+        instance.addCandidate("CandY", { from: App.account });
         // Reload when a new vote is recorded
         
         var options = {
-          url: "http://localhost:49160/bcc.php",
+          url: "http://localhost:3000/bcc.php",
           dataType: "text",
           type: "GET",
           data: { rechnung: "alle" }, // Our valid JSON string
